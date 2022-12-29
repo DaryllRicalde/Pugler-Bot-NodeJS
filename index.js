@@ -38,6 +38,7 @@ discordClient.on('messageCreate',(msg) =>{
         const index = Math.floor(Math.random() * wordsDB.rizz.length)
         msg.channel.send(wordsDB.rizz[index]);
     } else if (msg.content === '!watch'){
-      // return a list of 
+      // suggest X amount of movies with title, description and image
+      null
     }
 });
