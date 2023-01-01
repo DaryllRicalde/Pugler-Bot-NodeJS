@@ -1,23 +1,34 @@
 # Pugler Bot
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/DaryllRicalde/Pugler-Bot-NodeJS)
 
 Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler 
 
 ## Technologies/Software:
 - Node
 - Discord.js
+- Axios
+- IMDB API
 - ✨Magic ✨
 
 ## Features
-To come
+- Pugler can suggest a list of movies to watch for your watch party with `/suggest`
+- Pugler can award you a rizz name with `/rizz`
+
+## Project Structure 
+- `index.js` - Entry point for the bot
+- `/commands` - Contains implementations of commands
+- `deploy-commands.js` - Used to register and update slash commands for the bot
 
 ## TODO
 - [X] Hide secrets in DOTENV file
-- [ ] Suggest a list of movies to watch
-- [ ] Tell the weather + send associated pic of pug (?)
+- [X] Suggest a list of movies to watch
+- [X] Build slash command handler
 - [ ] Set events on a calendar 
 - [ ] Deploy -- Glitch (?)
+
+## Stretch Goals
+- [ ] Fantasy Basketball using Pugler
 
 ### Discord.js
 
