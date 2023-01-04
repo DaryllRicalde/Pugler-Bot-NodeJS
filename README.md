@@ -8,10 +8,11 @@ Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler
 - Node
 - Discord.js
 - Axios
-- IMDB API
+- IMDb API
 - ✨Magic ✨
 
 ## Features
+- Pugler now uses message embeds
 - Pugler can suggest a list of movies to watch for your watch party with `/suggest`
 - Pugler can award you a rizz name with `/rizz`
 
@@ -24,11 +25,15 @@ Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler
 - [X] Hide secrets in DOTENV file
 - [X] Suggest a list of movies to watch
 - [X] Build slash command handler
-- [ ] Set events on a calendar 
+- [X] Use Message Embeds for replies
+- [ ] Use MongoDB
+- [ ] Allow users to publish their Valorant settings (crosshair, resolution, etc...) to the database
+- [ ] Allow users to see their own or other users' Valorant settings
 - [ ] Deploy -- Glitch (?)
 
 ## Stretch Goals
 - [ ] Fantasy Basketball using Pugler
+- [ ] ChatGPT 
 
 ### Discord.js
 

@@ -44,6 +44,7 @@ for (const file of commandFiles) {
   // set a new item in the Collection with the key as the command name and the value as the exported module
   if ("data" in command && "execute" in command) {
     discordClient.commands.set(command.data.name, command);
+    // console.log(command);  // check if command was successfully registered
   } else {
     console.log(
       `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
@@ -75,7 +76,3 @@ discordClient.on(Events.InteractionCreate, async interaction => {
     });
   }
 });
-
-// const commandHandler = require("./commands/movies");
-
-// discordClient.on("messageCreate", commandHandler);

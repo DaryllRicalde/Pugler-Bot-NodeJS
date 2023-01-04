@@ -1,5 +1,10 @@
 const axios = require("axios");
-const { SlashCommandBuilder } = require("discord.js");
+const movieEmbedBuilder = require("../movie-embed-builder.js");
+
+const { AttachmentBuilder, SlashCommandBuilder } = require("discord.js");
+
+// Bot icon
+const file = new AttachmentBuilder("static/icon.jpg");
 
 // TODO: !help command => Return the current capabilities of Pugler
 module.exports = {
@@ -25,6 +30,7 @@ module.exports = {
         const r = Math.floor(Math.random() * movieList.length);
         movie = movieList[r];
         movieId = movie.id;
+        console.log(movieId)
         title = movie.title;
         img = movie.image;
         return axios.get(
@@ -32,22 +38,20 @@ module.exports = {
             process.env.IMDB_TOKEN +
             "/" +
             movieId
-        );
+        );  
       })
       .then( async (res) => {
+        // console.log(`videoDescription == ${res.data.videoDescription}`);
+        if(res.data.videoDescription.length < 1){
+          videoDescription = "No movie summary provided";
+        }
         videoDescription = res.data.videoDescription;
         trailerLink = res.data.link;
-        await interaction.reply(
-          `Master ${interaction.user} may I suggest ` +
-            title +
-            "\n" +
-            img +
-            "\n" +
-            videoDescription +
-            "\n" +
-            trailerLink
-        );
-        console.log(movieId);
+        // create Message Embed using data 
+        const movieObject = { movieId, title, img, videoDescription, trailerLink };
+        await interaction.deferReply();
+        const embedMessage = movieEmbedBuilder(movieObject);
+        await interaction.editReply({ embeds: [embedMessage], files: [file] });
       })
       .catch((err) => console.log(err));   
   }
