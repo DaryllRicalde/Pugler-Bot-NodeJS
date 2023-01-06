@@ -15,7 +15,7 @@ const file = new AttachmentBuilder("static/icon.jpg");
 
 module.exports =  (movieObject) => {
     const embed = new EmbedBuilder()
-        .setColor('#FA8072')
+        .setColor('#EECD95')
         .setTitle(movieObject.title)
         .setDescription(movieObject.videoDescription)
         .setThumbnail('attachment://icon.jpg')

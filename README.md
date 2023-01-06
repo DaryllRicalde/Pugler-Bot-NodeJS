@@ -8,6 +8,7 @@ Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler
 - Node
 - Discord.js
 - Axios
+- MongoDB
 - IMDb API
 - ✨Magic ✨
 
@@ -19,6 +20,9 @@ Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler
 ## Project Structure 
 - `index.js` - Entry point for the bot
 - `/commands` - Contains implementations of commands
+- `/static` - Contains static files such as images
+- `mongo-CRUD.js` - Creates a connection to the MongoDB cluster
+- `mongo.js` - For testing the connection to the MongoDB cluster via stdout
 - `deploy-commands.js` - Used to register and update slash commands for the bot
 
 ## TODO
@@ -26,8 +30,9 @@ Pugler Bot is a Discord Bot written in Node.js. Pug + Butler = Pugler
 - [X] Suggest a list of movies to watch
 - [X] Build slash command handler
 - [X] Use Message Embeds for replies
-- [ ] Use MongoDB
-- [ ] Allow users to publish their Valorant settings (crosshair, resolution, etc...) to the database
+- [X] Use MongoDB
+- [X] Allow users to publish their Valorant settings (crosshair, resolution, etc...) to the database
+- [ ] Allow users to update their Valorant settings
 - [ ] Allow users to see their own or other users' Valorant settings
 - [ ] Deploy -- Glitch (?)
 
@@ -44,6 +49,9 @@ Gateway Intents were introduced by Discord so bot developers can choose which ev
 - The Guilds intent populates and maintains the guilds, channels and guild.roles caches, plus thread-related events. If this intent is not enabled, data for interactions and messages will include only the guild and channel id, and will not resolve to the full class.
 - The GuildMembers intent keeps cached guild members up to date, including changes to their roles and permissions, nickname etc.
 Note that you still receive full member data with interactions and messages without this intent enabled.
+
+**Command Interactions**
+https://discord.js.org/#/docs/main/stable/class/CommandInteraction
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
